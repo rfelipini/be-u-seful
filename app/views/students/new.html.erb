@@ -1,2 +1,8 @@
-<h1>Students#new</h1>
-<p>Find me in app/views/students/new.html.erb</p>
+<h1>student#new</h1>
+<p>Find me in app/views/student/new.html.erb</p>
+
+<%= simple_form_for @student do |f|%>
+    <%= f.input :full_name %>
+    <%= f.input :age %>
+    <%= f.submit 'create a student', class: 'btn btn-primary'%>
+<% end %>
