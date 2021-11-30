@@ -10,10 +10,28 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_11_30_151403) do
+ActiveRecord::Schema.define(version: 2021_11_30_183455) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "students", force: :cascade do |t|
+    t.string "full_name"
+    t.integer "age"
+    t.string "nationality"
+    t.string "city_at"
+    t.string "city_to"
+    t.integer "phone_number"
+    t.string "link_to_github"
+    t.string "link_to_linkedin"
+    t.string "passport"
+    t.string "remoto_work"
+    t.string "work_abroad"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.bigint "user_id", null: false
+    t.index ["user_id"], name: "index_students_on_user_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -38,5 +56,6 @@ ActiveRecord::Schema.define(version: 2021_11_30_151403) do
     t.index ["user_id"], name: "index_volunteers_on_user_id"
   end
 
+  add_foreign_key "students", "users"
   add_foreign_key "volunteers", "users"
 end

@@ -8,9 +8,10 @@ class ApplicationController < ActionController::Base
   end
 
   def dispatch_user
-    return unless current_user && current_user.volunteer.nil? && request.get?
+    return unless current_user && (current_user.volunteer.nil? || current_user.student.nil? ) && request.get?
 
-    path = new_volunteer_path if current_user.role == 'volunteer' || !current_user.volunteer.valid?
+    path = new_volunteer_path if current_user.role == 'volunteer' && (current_user.volunteer.nil? || !current_user.volunteer.valid?)
+    path = new_student_path if current_user.role == 'student' && (current_user.student.nil? || !current_user.student.valid?)
 
     redirect_to path unless path.nil? || path == request.path
   end
