@@ -1,0 +1,9 @@
+<h1>Volunteers#new</h1>
+<p>Find me in app/views/volunteers/new.html.erb</p>
+
+<%= simple_form_for @volunteer do |f|%>
+    <%= f.input :full_name %>
+    <%= f.input :github %>
+    <%= f.input :background %>
+    <%= f.submit 'create a volunteer', class: 'btn btn-primary'%>
+<% end %>
