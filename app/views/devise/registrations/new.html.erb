@@ -15,6 +15,13 @@
     <%= f.input :password_confirmation,
                 required: true,
                 input_html: { autocomplete: "new-password" } %>
+
+    <%= f.input :role,
+                required: true,
+                hint: ("sign up as a student or as a volunteer"),
+                collection: ["student", "volunteer"],
+                as: :radio_buttons
+                %>
   </div>
 
   <div class="form-actions">
