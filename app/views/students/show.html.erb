@@ -43,3 +43,13 @@
   <strong>Work abroad:</strong>
   <%= @student.work_abroad%>
 </p>
+<p>
+  <strong>Interest:</strong>
+  <ul>
+    <%@student.fields_of_interests.each do |fields_of_interest|%>
+      <li><%=fields_of_interest.interest%></li>
+    <%end%>
+  </ul>
+</p>
+
+<%= link_to "Add field of interest", new_student_fields_of_interest_path(@student)%>

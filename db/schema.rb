@@ -10,10 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_11_30_183455) do
+ActiveRecord::Schema.define(version: 2021_12_01_173720) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "fields_of_interests", force: :cascade do |t|
+    t.bigint "student_id", null: false
+    t.string "interest"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["student_id"], name: "index_fields_of_interests_on_student_id"
+  end
 
   create_table "students", force: :cascade do |t|
     t.string "full_name"
@@ -56,6 +64,7 @@ ActiveRecord::Schema.define(version: 2021_11_30_183455) do
     t.index ["user_id"], name: "index_volunteers_on_user_id"
   end
 
+  add_foreign_key "fields_of_interests", "students"
   add_foreign_key "students", "users"
   add_foreign_key "volunteers", "users"
 end

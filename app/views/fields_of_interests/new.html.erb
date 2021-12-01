@@ -1,0 +1,4 @@
+<%= simple_form_for [@student, @fields_of_interest] do |f|%>
+    <%= f.input :interest %>
+    <%= f.submit 'add to interest', class: 'btn btn-primary'%>
+<% end %>
