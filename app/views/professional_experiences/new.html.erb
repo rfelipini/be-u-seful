@@ -1,0 +1,8 @@
+<%= simple_form_for [@student, @professional_experience] do |f|%>
+    <%= f.input :description %>
+    <%= f.input :started_at %>
+    <%= f.input :finalized_at %>
+    <%= f.input :ocupation %>
+    <%= f.input :company %>
+    <%= f.submit 'add to professional experience', class: 'btn btn-primary'%>
+<% end %>
