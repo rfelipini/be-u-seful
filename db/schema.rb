@@ -15,6 +15,18 @@ ActiveRecord::Schema.define(version: 2021_12_01_191801) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "courses", force: :cascade do |t|
+    t.bigint "student_id", null: false
+    t.string "description"
+    t.string "started_at"
+    t.string "finalized_at"
+    t.string "title"
+    t.string "company"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["student_id"], name: "index_courses_on_student_id"
+  end
+
   create_table "fields_of_interests", force: :cascade do |t|
     t.bigint "student_id", null: false
     t.string "interest"
@@ -81,6 +93,7 @@ ActiveRecord::Schema.define(version: 2021_12_01_191801) do
     t.index ["user_id"], name: "index_volunteers_on_user_id"
   end
 
+  add_foreign_key "courses", "students"
   add_foreign_key "fields_of_interests", "students"
   add_foreign_key "languages", "students"
   add_foreign_key "students", "users"
