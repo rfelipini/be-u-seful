@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_12_01_173720) do
+ActiveRecord::Schema.define(version: 2021_12_01_191801) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -21,6 +21,15 @@ ActiveRecord::Schema.define(version: 2021_12_01_173720) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["student_id"], name: "index_fields_of_interests_on_student_id"
+  end
+
+  create_table "languages", force: :cascade do |t|
+    t.string "language"
+    t.integer "score"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.bigint "student_id", null: false
+    t.index ["student_id"], name: "index_languages_on_student_id"
   end
 
   create_table "students", force: :cascade do |t|
@@ -54,6 +63,14 @@ ActiveRecord::Schema.define(version: 2021_12_01_173720) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  create_table "videos", force: :cascade do |t|
+    t.string "url"
+    t.bigint "student_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["student_id"], name: "index_videos_on_student_id"
+  end
+
   create_table "volunteers", force: :cascade do |t|
     t.string "full_name"
     t.string "github"
@@ -65,6 +82,8 @@ ActiveRecord::Schema.define(version: 2021_12_01_173720) do
   end
 
   add_foreign_key "fields_of_interests", "students"
+  add_foreign_key "languages", "students"
   add_foreign_key "students", "users"
+  add_foreign_key "videos", "students"
   add_foreign_key "volunteers", "users"
 end

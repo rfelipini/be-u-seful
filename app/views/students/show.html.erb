@@ -52,4 +52,25 @@
   </ul>
 </p>
 
+<p>
+  <strong>Language:</strong>
+  <ul>
+    <%@student.languages.each do |language|%>
+      <li><%=language.language%></li>
+      <li><%=language.score%></li>
+    <%end%>
+  </ul>
+</p>
+
+<p>
+  <strong>Video:</strong>
+  <ul>
+    <%@student.videos.each do |video|%>
+      <li><%=video.url%></li>
+    <%end%>
+  </ul>
+</p>
+
 <%= link_to "Add field of interest", new_student_fields_of_interest_path(@student)%>
+<%= link_to "Add Languages", new_student_language_path(@student)%>
+<%= link_to "Add Video", new_student_video_path(@student)%>
