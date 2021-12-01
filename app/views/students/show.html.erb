@@ -52,4 +52,32 @@
   </ul>
 </p>
 
+<p>
+  <strong>Professional experience:</strong>
+  <ul>
+    <%@student.professional_experiences.each do |professional_experience|%>
+      <li><%=professional_experience.description%></li>
+      <li><%=professional_experience.started_at%></li>
+      <li><%=professional_experience.finalized_at%></li>
+      <li><%=professional_experience.ocupation%></li>
+      <li><%=professional_experience.company%></li>
+    <%end%>
+  </ul>
+</p>
+
+<p>
+  <strong>Courses:</strong>
+  <ul>
+    <%@student.courses.each do |course|%>
+      <li><%=course.description%></li>
+      <li><%=course.started_at%></li>
+      <li><%=course.finalized_at%></li>
+      <li><%=course.title%></li>
+      <li><%=course.company%></li>
+    <%end%>
+  </ul>
+</p>
+
 <%= link_to "Add field of interest", new_student_fields_of_interest_path(@student)%>
+<%= link_to "Add professional experience", new_student_professional_experience_path(@student)%>
+<%= link_to "Add course", new_student_course_path(@student)%>
