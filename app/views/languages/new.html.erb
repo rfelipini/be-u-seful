@@ -1,0 +1,5 @@
+<%= simple_form_for [@student, @language] do |f|%>
+    <%= f.input :language %>
+    <%= f.input :score %>
+    <%= f.submit 'add to language', class: 'btn btn-primary'%>
+<% end %>
