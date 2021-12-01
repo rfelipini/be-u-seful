@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   devise_for :users
   resources :volunteers, only: [:new, :create, :show]
   resources :students, only: [:new, :create, :show] do
+    resources :portfolio_types, only: [:new, :create]
     resources :fields_of_interests, only: [:new, :create]
     resources :languages, only: [:new, :create]
     resources :videos, only: [:new, :create]

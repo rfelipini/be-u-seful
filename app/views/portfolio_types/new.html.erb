@@ -1,0 +1,6 @@
+<%= simple_form_for [@student, @portfolio_type] do |f|%>
+    <%= f.input :image_card %>
+    <%= f.input :url %>
+    <%= f.input :title %>
+    <%= f.submit 'add to portfolio', class: 'btn btn-primary'%>
+<% end %>

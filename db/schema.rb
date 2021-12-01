@@ -44,6 +44,28 @@ ActiveRecord::Schema.define(version: 2021_12_01_191801) do
     t.index ["student_id"], name: "index_languages_on_student_id"
   end
 
+  create_table "portfolio_types", force: :cascade do |t|
+    t.bigint "student_id", null: false
+    t.string "image_card"
+    t.string "url"
+    t.string "title"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["student_id"], name: "index_portfolio_types_on_student_id"
+  end
+
+  create_table "professional_experiences", force: :cascade do |t|
+    t.bigint "student_id", null: false
+    t.string "description"
+    t.string "started_at"
+    t.string "finalized_at"
+    t.string "ocupation"
+    t.string "company"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["student_id"], name: "index_professional_experiences_on_student_id"
+  end
+
   create_table "students", force: :cascade do |t|
     t.string "full_name"
     t.integer "age"
@@ -96,6 +118,8 @@ ActiveRecord::Schema.define(version: 2021_12_01_191801) do
   add_foreign_key "courses", "students"
   add_foreign_key "fields_of_interests", "students"
   add_foreign_key "languages", "students"
+  add_foreign_key "portfolio_types", "students"
+  add_foreign_key "professional_experiences", "students"
   add_foreign_key "students", "users"
   add_foreign_key "videos", "students"
   add_foreign_key "volunteers", "users"
