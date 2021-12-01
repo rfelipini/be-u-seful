@@ -1,5 +1,5 @@
 class VolunteersController < ApplicationController
-
+  before_action :set_volunteer, only: %i[show edit update destroy]
   def new
     @volunteer = Volunteer.new
     #authorize @volunteer
@@ -19,8 +19,11 @@ class VolunteersController < ApplicationController
     end
   end
 
-
   private
+
+  def set_volunteer
+    @volunteer = Volunteer.find(params[:id])
+  end
 
   def volunteer_params
     params.require(:volunteer).permit(:full_name, :github, :background)

@@ -1,8 +1,18 @@
+
 <h1>student#new</h1>
 <p>Find me in app/views/student/new.html.erb</p>
 
 <%= simple_form_for @student do |f|%>
     <%= f.input :full_name %>
     <%= f.input :age %>
+    <%= f.input :nationality %>
+    <%= f.input :city_at %>
+    <%= f.input :city_to %>
+    <%= f.input :phone_number %>
+    <%= f.input :link_to_github %>
+    <%= f.input :link_to_linkedin %>
+    <%= f.input :passport %>
+    <%= f.input :remoto_work %>
+    <%= f.input :work_abroad %>
     <%= f.submit 'create a student', class: 'btn btn-primary'%>
 <% end %>
