@@ -51,5 +51,20 @@
     <%end%>
   </ul>
 </p>
-
+<p>
+<p>
 <%= link_to "Add field of interest", new_student_fields_of_interest_path(@student)%>
+</p>
+  <strong>Portfolio:</strong>
+  <ul>
+    <%@student.portfolio_types.each do |portfolio_type|%>
+      <li><%=portfolio_type.image_card%></li>
+      <li><%=portfolio_type.url%></li>
+      <li><%=portfolio_type.title%></li>
+    <%end%>
+  </ul>
+</p>
+
+<p>
+<%= link_to "Add portfolio type", new_student_portfolio_type_path(@student) %>
+</p>
