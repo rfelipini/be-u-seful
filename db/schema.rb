@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_12_02_170025) do
+ActiveRecord::Schema.define(version: 2021_12_02_180927) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -74,6 +74,16 @@ ActiveRecord::Schema.define(version: 2021_12_02_170025) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["student_id"], name: "index_professional_experiences_on_student_id"
+  end
+
+  create_table "reviews", force: :cascade do |t|
+    t.text "review_text"
+    t.bigint "student_id", null: false
+    t.bigint "volunteer_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["student_id"], name: "index_reviews_on_student_id"
+    t.index ["volunteer_id"], name: "index_reviews_on_volunteer_id"
   end
 
   create_table "skills", force: :cascade do |t|
@@ -148,6 +158,8 @@ ActiveRecord::Schema.define(version: 2021_12_02_170025) do
   add_foreign_key "languages", "students"
   add_foreign_key "portfolio_types", "students"
   add_foreign_key "professional_experiences", "students"
+  add_foreign_key "reviews", "students"
+  add_foreign_key "reviews", "volunteers"
   add_foreign_key "student_skills", "skills"
   add_foreign_key "student_skills", "students"
   add_foreign_key "students", "users"

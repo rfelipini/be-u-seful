@@ -1,4 +1,10 @@
 <%= simple_form_for [@student, @student_skill] do |f|%>
     <%= f.input :score %>
+    <%#= f.input :name %>
+    <%#= f.input :skill_type %>
+    <%= simple_fields_for :skill do |t| %>
+      <%= t.input :name, label: "name" %>
+      <%= t.input :skill_type, label: "skill type" %>
+    <% end %>
     <%= f.submit 'add to skill', class: 'btn btn-primary'%>
 <% end %>
