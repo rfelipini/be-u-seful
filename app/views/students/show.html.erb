@@ -121,6 +121,8 @@
   <ul>
      <%@student.student_skills.each do |student_skill|%>
       <li><%=student_skill.score%></li>
+      <li><%=student_skill.skill.name%></li>
+      <li><%=student_skill.skill.skill_type%></li>
     <%end%>
   </ul>
 </p>
