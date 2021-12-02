@@ -117,7 +117,6 @@
 <p>
 <%= link_to "Add course", new_student_course_path(@student)%>
 </p>
-</p>
   <strong>Student Skills:</strong>
   <ul>
      <%@student.student_skills.each do |student_skill|%>
@@ -127,4 +126,17 @@
 </p>
 <p>
 <%= link_to "Add skill", new_student_student_skill_path(@student)%>
+</p>
+
+<strong>Certificates:</strong>
+  <ul>
+     <%@student.certificates.each do |certificate|%>
+      <li><%=certificate.upload_image%></li>
+      <li><%=certificate.image_title%></li>
+      <li><%=certificate.image_icon%></li>
+    <%end%>
+  </ul>
+</p>
+<p>
+<%= link_to "Add Certificate", new_student_certificate_path(@student)%>
 </p>
