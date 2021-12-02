@@ -117,4 +117,14 @@
 <p>
 <%= link_to "Add course", new_student_course_path(@student)%>
 </p>
-
+</p>
+  <strong>Student Skills:</strong>
+  <ul>
+     <%@student.student_skills.each do |student_skill|%>
+      <li><%=student_skill.score%></li>
+    <%end%>
+  </ul>
+</p>
+<p>
+<%= link_to "Add skill", new_student_student_skill_path(@student)%>
+</p>

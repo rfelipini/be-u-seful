@@ -6,5 +6,6 @@ class Student < ApplicationRecord
   has_many :videos
   has_many :professional_experiences
   has_many :courses
+  has_many :student_skills
   validates :full_name, :age, presence: true
 end
