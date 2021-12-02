@@ -1,0 +1,6 @@
+<%= simple_form_for [@student, @certificate] do |f|%>
+    <%= f.input :upload_image %>
+    <%= f.input :image_title %>
+    <%= f.input :image_icon %>
+    <%= f.submit 'Add Certificate', class: 'btn btn-primary'%>
+<% end %>

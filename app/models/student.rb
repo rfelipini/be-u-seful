@@ -7,5 +7,6 @@ class Student < ApplicationRecord
   has_many :professional_experiences
   has_many :courses
   has_many :student_skills
+  has_many :certificates
   validates :full_name, :age, presence: true
 end

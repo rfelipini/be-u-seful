@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  get 'certificates/new'
   get 'student_skills/new'
   devise_for :users
   resources :volunteers, only: [:new, :create, :show]
@@ -11,6 +12,7 @@ Rails.application.routes.draw do
     resources :professional_experiences, only: [:new, :create]
     resources :courses, only: [:new, :create]
     resources :student_skills, only: [:new, :create]
+    resources :certificates, only: [:new, :create]
   end
   root to: 'pages#home'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
