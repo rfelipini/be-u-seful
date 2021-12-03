@@ -1,4 +1,8 @@
 <%= simple_form_for [@student, @fields_of_interest] do |f|%>
-    <%= f.input :interest %>
-    <%= f.submit 'add to interest', class: 'btn btn-primary'%>
+    <div class="col-md-6 offset-md-3">
+      <%= f.input :interest, :placeholder => 'e.g. Full Stack Developer'  %>
+    </div>
+    <div class="col-md-6 offset-md-3">
+      <%= f.submit 'add to interest', class: 'btn btn-primary'%>
+    </div>
 <% end %>

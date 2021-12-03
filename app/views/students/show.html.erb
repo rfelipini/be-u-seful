@@ -45,7 +45,7 @@
 </p>
 <p>
   <strong>Interest:</strong>
-  <ul>
+    <ul>
     <%@student.fields_of_interests.each do |fields_of_interest|%>
       <li><%=fields_of_interest.interest%></li>
     <%end%>
@@ -133,9 +133,9 @@
 <strong>Certificates:</strong>
   <ul>
      <%@student.certificates.each do |certificate|%>
-      <li><%=certificate.upload_image%></li>
-      <li><%=certificate.image_title%></li>
-      <li><%=certificate.image_icon%></li>
+      <p><%=certificate.upload_image%></p>
+      <p><%=certificate.image_title%></p>
+      <p><%=certificate.image_icon%></p>
     <%end%>
   </ul>
 </p>

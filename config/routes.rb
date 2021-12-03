@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-
   get 'certificates/new'
   get 'student_skills/new'
   devise_for :users

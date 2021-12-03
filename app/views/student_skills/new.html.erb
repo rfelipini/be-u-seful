@@ -1,10 +1,21 @@
 <%= simple_form_for [@student, @student_skill] do |f|%>
-    <%= f.input :score %>
+    <div class="col-md-6 offset-md-3">
+    <%= f.input :score, :placeholder => 'Score'  %>
+    </div>
+    <div class="col-md-6 offset-md-3">
+    <input type="range">
+    </div>
     <%#= f.input :name %>
     <%#= f.input :skill_type %>
     <%= simple_fields_for :skill do |t| %>
-      <%= t.input :name, label: "name" %>
-      <%= t.input :skill_type, label: "skill type" %>
+          <div class="col-md-6 offset-md-3">
+    <%= t.input :name, label: "name", :placeholder => 'Name'  %>
+    </div>
+        <div class="col-md-6 offset-md-3">
+      <%= t.input :skill_type, label: "skill type", :placeholder => 'Skill type'  %>
+    </div>
     <% end %>
+        <div class="col-md-6 offset-md-3">
     <%= f.submit 'add to skill', class: 'btn btn-primary'%>
+    </div>
 <% end %>

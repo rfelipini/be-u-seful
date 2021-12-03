@@ -1,7 +1,11 @@
 <%= simple_form_for [@student, @video] do |f|%>
-    <%= f.input :url %>
-    <%= f.submit 'add to video', class: 'btn btn-primary'%>
+    <div class="col-md-6 offset-md-3">
+      <%= f.input :url, :placeholder => 'Url'  %>
+      <p>
+        <input type="file">
+      </p>
+    </div>
+    <div class="col-md-6 offset-md-3">
+      <%= f.submit 'add to video', class: 'btn btn-primary'%>
+    </div>
 <% end %>
-
-
-tirar depois

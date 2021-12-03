@@ -20,7 +20,7 @@ class CertificatesController < ApplicationController
   private
 
   def certificate_params
-    params.require(:certificate).permit(:upload_image, :image_title, :image_icon)
+    params.require(:certificate).permit(:upload_image, :image_title, :image_icon) 
   end
 
 end
