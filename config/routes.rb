@@ -14,10 +14,7 @@ Rails.application.routes.draw do
     resources :student_skills, only: [:new, :create]
     resources :certificates, only: [:new, :create]
   end
-  get "seja_voce", to: 'pages#seja_voce', as: "seja_voce"
-  get "seja_util", to: 'pages#seja_util', as: "seja_util"
   root to: 'pages#home'
-
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 
 end
