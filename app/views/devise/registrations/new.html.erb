@@ -4,10 +4,13 @@
   <%= f.error_notification %>
 
   <div class="form-inputs">
+    <div class="col-md-6 offset-md-3">
     <%= f.input :email,
                 required: true,
                 autofocus: true,
                 input_html: { autocomplete: "email" }%>
+    </div>
+    <div class="col-md-6 offset-md-3">
     <%= f.input :password,
                 required: true,
                 hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
@@ -15,18 +18,23 @@
     <%= f.input :password_confirmation,
                 required: true,
                 input_html: { autocomplete: "new-password" } %>
-
+    </div>
+    <div class="col-md-6 offset-md-3">
     <%= f.input :role,
                 required: true,
                 hint: ("sign up as a student or as a volunteer"),
                 collection: ["student", "volunteer"],
                 as: :radio_buttons
                 %>
+    </div>
   </div>
-
+    <div class="col-md-6 offset-md-3">
   <div class="form-actions">
     <%= f.button :submit, "Sign up" %>
   </div>
+    </div>
 <% end %>
 
+    <div class="col-md-6 offset-md-3">
 <%= render "devise/shared/links" %>
+  </div>

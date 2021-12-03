@@ -1,8 +1,34 @@
 <%= simple_form_for [@student, @professional_experience] do |f|%>
-    <%= f.input :description %>
-    <%= f.input :started_at %>
-    <%= f.input :finalized_at %>
-    <%= f.input :ocupation %>
-    <%= f.input :company %>
+    <div class="col-md-6 offset-md-3">
+    <%= f.input :description, :placeholder => 'Description'  %>
+    </div>
+    <div class="col-md-6 offset-md-3">
+    <%= f.input :started_at, :placeholder => 'Started at'  %>
+    </div>
+    <div class="col-md-6 offset-md-3">
+    <input type="date">
+    </div>
+    <p>
+    </p>
+    <p>
+    </p>
+    <div class="col-md-6 offset-md-3">
+    <%= f.input :finalized_at, :placeholder => 'Finalized at'  %>
+    </div>
+    <div class="col-md-6 offset-md-3">
+    <input type="date">
+    </div>
+    <p>
+    </p>
+    <p>
+    </p>
+    <div class="col-md-6 offset-md-3">
+    <%= f.input :ocupation, :placeholder => 'Ocupation'  %>
+    </div>
+    <div class="col-md-6 offset-md-3">
+    <%= f.input :company, :placeholder => 'Company'  %>
+    </div>
+    <div class="col-md-6 offset-md-3">
     <%= f.submit 'add to professional experience', class: 'btn btn-primary'%>
+    </div>
 <% end %>

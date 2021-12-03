@@ -6,7 +6,7 @@ class CreateStudents < ActiveRecord::Migration[6.1]
       t.string :nationality
       t.string :city_at
       t.string :city_to
-      t.integer :phone_number
+      t.string :phone_number
       t.string :link_to_github
       t.string :link_to_linkedin
       t.string :passport

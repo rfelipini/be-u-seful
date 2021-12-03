@@ -1,6 +1,14 @@
 <%= simple_form_for [@student, @certificate] do |f|%>
-    <%= f.input :upload_image %>
-    <%= f.input :image_title %>
-    <%= f.input :image_icon %>
-    <%= f.submit 'Add Certificate', class: 'btn btn-primary'%>
+    <div class="col-md-6 offset-md-3">
+      <%= f.input :upload_image, :placeholder => 'Image'  %>
+    </div>
+    <div class="col-md-6 offset-md-3">
+      <%= f.input :image_title, :placeholder => 'Image Title'  %>
+    </div>
+    <div class="col-md-6 offset-md-3">
+      <%= f.input :image_icon, :placeholder => 'Icon image'  %>
+    </div>
+    <div class="col-md-6 offset-md-3">
+      <%= f.submit 'Add Certificate', class: 'btn btn-primary'%>
+    </div>
 <% end %>

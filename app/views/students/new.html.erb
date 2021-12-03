@@ -1,18 +1,45 @@
+ <div class="col-md-6 offset-md-3">
+<h1>Welcome student</h1>
+<p>*Traduzir: Por favor, preencha os campos abaixo para acessar a plataforma</p>
+</div>
 
-<h1>student#new</h1>
-<p>Find me in app/views/student/new.html.erb</p>
+
 
 <%= simple_form_for @student do |f|%>
-    <%= f.input :full_name %>
-    <%= f.input :age %>
-    <%= f.input :nationality %>
-    <%= f.input :city_at %>
-    <%= f.input :city_to %>
-    <%= f.input :phone_number %>
-    <%= f.input :link_to_github %>
-    <%= f.input :link_to_linkedin %>
-    <%= f.input :passport %>
-    <%= f.input :remoto_work %>
-    <%= f.input :work_abroad %>
+ <div class="col-md-6 offset-md-3">
+    <%= f.input :full_name, :placeholder => 'Adam Smith' %>
+    </div>
+     <div class="col-md-6 offset-md-3">
+    <%= f.input :age, :collection => 14..29, :placeholder => '29' %>
+        </div>
+     <div class="col-md-6 offset-md-3">
+    <%= f.input :nationality, :placeholder => 'American'  %>
+        </div>
+     <div class="col-md-6 offset-md-3">
+    <%= f.input :city_at, :placeholder => 'New York'  %>
+        </div>
+     <div class="col-md-6 offset-md-3">
+    <%= f.input :city_to, :placeholder => 'Miami'  %>
+        </div>
+     <div class="col-md-6 offset-md-3">
+    <%= f.input :phone_number.to_s, :placeholder => '+55 11 932383996'  %>
+        </div>
+     <div class="col-md-6 offset-md-3">
+    <%= f.input :link_to_github, :placeholder => 'adamsmith'  %>
+        </div>
+     <div class="col-md-6 offset-md-3">
+    <%= f.input :link_to_linkedin, :placeholder => 'adamsmith'  %>
+        </div>
+     <div class="col-md-6 offset-md-3">
+    <%= f.input :passport, required: true, :collection => ['yes', 'no'], as: :radio_buttons  %>
+        </div>
+     <div class="col-md-6 offset-md-3">
+    <%= f.input :remoto_work, required: true, :collection => ['yes', 'no'], as: :radio_buttons  %>
+        </div>
+     <div class="col-md-6 offset-md-3">
+    <%= f.input :work_abroad, required: true, :collection => ['yes', 'no'], as: :radio_buttons  %>
+        </div>  
+     <div class="col-md-6 offset-md-3">
     <%= f.submit 'create a student', class: 'btn btn-primary'%>
+        </div>
 <% end %>

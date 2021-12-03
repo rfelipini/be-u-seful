@@ -1,6 +1,18 @@
 <%= simple_form_for [@student, @portfolio_type] do |f|%>
-    <%= f.input :image_card %>
-    <%= f.input :url %>
-    <%= f.input :title %>
-    <%= f.submit 'add to portfolio', class: 'btn btn-primary'%>
+    <div class="col-md-6 offset-md-3">
+      <%= f.input :image_card, :placeholder => 'Upload your image or video'  %>
+        <p>
+          <input type="file">
+        </p>
+    </div>
+    <div class="col-md-6 offset-md-3">
+      <%= f.input :url, :placeholder => 'Insert an url'  %>
+    </div>
+    <div class="col-md-6 offset-md-3">
+      <%= f.input :title, :placeholder => 'Title of portfolio'  %>
+    </div>
+    <div class="col-md-6 offset-md-3">
+      <%= f.submit 'add to portfolio', class: 'btn btn-primary'%>
+    </div>
 <% end %>
+

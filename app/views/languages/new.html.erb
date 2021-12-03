@@ -1,5 +1,14 @@
 <%= simple_form_for [@student, @language] do |f|%>
-    <%= f.input :language %>
-    <%= f.input :score %>
+    <div class="col-md-6 offset-md-3">
+      <%= f.input :language, :placeholder => 'Language'  %>
+    </div>
+    <div class="col-md-6 offset-md-3">
+      <%= f.input :score, :placeholder => 'Score'  %>
+    </div>
+    <div class="col-md-6 offset-md-3">
+    <input type="range">
+    </div>
+    <div class="col-md-6 offset-md-3">
     <%= f.submit 'add to language', class: 'btn btn-primary'%>
+    </div>
 <% end %>
