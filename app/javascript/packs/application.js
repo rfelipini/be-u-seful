@@ -28,3 +28,16 @@ document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
 });
+
+
+  //test js
+$("#slideshow > div:gt(0)").hide();
+
+setInterval(function () {
+  $('#slideshow > div:first')
+    .fadeOut(700)
+    .next()
+    .fadeIn(700)
+    .end()
+    .appendTo('#slideshow');
+}, 3000);

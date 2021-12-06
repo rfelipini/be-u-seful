@@ -16,3 +16,33 @@
   text-align: center;
   text-emphasis-style: bold;
 }
+
+.student-intro{
+  color: rgb(0, 0, 0);
+  text-align: center;
+  text-emphasis-style: bold;
+}
+
+.volunteer-intro{
+  color: rgb(0, 0, 0);
+  text-align: center;
+  text-emphasis-style: bold;
+}
+
+#slideshow {
+  margin: auto;
+  position: relative;
+  text-align: center;
+  width: 500px;
+  height: 300px;
+  padding: auto;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+}
+
+.slide-text {
+  position: absolute;
+  top: 45px;
+  left: 30px;
+  right: 30px;
+  bottom: 45px;
+}

@@ -15,6 +15,8 @@ Rails.application.routes.draw do
   end
   get "seja_voce", to: 'pages#seja_voce', as: "seja_voce"
   get "seja_util", to: 'pages#seja_util', as: "seja_util"
+  get "student_page", to: 'pages#student_page', as: "student_page"
+  get "volunteer_page", to: 'pages#volunteer_page', as: "volunteer_page"
   root to: 'pages#home'
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
