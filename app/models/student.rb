@@ -9,5 +9,6 @@ class Student < ApplicationRecord
   has_many :student_skills
   has_many :skills, through: :student_skills
   has_many :certificates
+  has_one_attached :photo
   validates :full_name, :age, presence: true
 end

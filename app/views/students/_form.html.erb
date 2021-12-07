@@ -1,6 +1,8 @@
 
 <%= simple_form_for student do |f|%>
- <div class="col-md-6 offset-md-3">
+    <div class="col-md-6 offset-md-3">
+    <%= f.input :photo, as: :file %>
+    <div class="col-md-6 offset-md-3">
     <%= f.input :full_name, :placeholder => 'Adam Smith' %>
     </div>
      <div class="col-md-6 offset-md-3">
