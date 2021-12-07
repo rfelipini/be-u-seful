@@ -38,6 +38,6 @@ def set_student
 end
 
 def student_params
-  params.require(:student).permit(:full_name, :age, :nationality, :city_at, :city_to, :phone_number, :link_to_github, :link_to_linkedin, :passport, :remoto_work, :work_abroad, :photo)
+  params.require(:student).permit(:full_name, :age, :nationality, :city_at, :city_to, :phone_number, :link_to_github, :link_to_linkedin, :passport, :remoto_work, :work_abroad, :photo, :video)
 end
 end
