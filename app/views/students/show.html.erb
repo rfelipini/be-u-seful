@@ -103,57 +103,57 @@
           </div>
           
   </div>
+    
     <div class="col-lg-8 bg-light text-dark py-4 px-5">
-    <div class="header-right">
-    <h4 class="text-uppercase">profile</h4>
-    <hr>
-    <p>
+      <div class="header-right">
+      <h4 class="text-uppercase">profile</h4>
+      <hr>
+      <p>
 
-      <div id="slideshow" >
-        <div class="slide-text">
-          <% if @student.fields_of_interests.first == nil%>
-          <%= ""%>
-          <% else%>
-          <ul class="list">
-          <h5 class="text-uppercase"> <%=@student.fields_of_interests.first.interest%></h5>
-          <% end%>
+        <div id="slideshow" >
+          <div class="slide-text">
+            <% if @student.fields_of_interests.first == nil%>
+            <%= ""%>
+            <% else%>
+            <ul class="list">
+            <h5 class="text-uppercase"> <%=@student.fields_of_interests.first.interest%></h5>
+            <% end%>
+          </div>
+
+          <div class="slide-text">
+            <% if @student.fields_of_interests.second == nil%>
+            <%= ""%>
+            <% else%>
+            <ul class="list">
+            <h5> <%=@student.fields_of_interests.second.interest%></h5>
+            <% end%>
+          </div>
+
+          <div class="slide-text">
+            <% if @student.fields_of_interests.third == nil%>
+            <%= ""%>
+            <% else%>
+            <ul class="list">
+            <h5 class="text-uppercase"> <%=@student.fields_of_interests.third.interest%></h5>
+            <% end%>
+          </div>
+
+          <div class="slide-text">
+            <% if @student.fields_of_interests.fourth == nil%>
+            <%= ""%>
+            <% else%>
+            <ul class="list">
+            <h5 class="text-uppercase"> <%=@student.fields_of_interests.third.interest%></h5>
+            <% end%>
+          </div>
+
+
         </div>
+              <div class="text-dark py-4">
+                <%= link_to "Add field of interest", new_student_fields_of_interest_path(@student), class: "text-blue "%>
+              </div>
 
-        <div class="slide-text">
-          <% if @student.fields_of_interests.second == nil%>
-          <%= ""%>
-          <% else%>
-          <ul class="list">
-          <h5> <%=@student.fields_of_interests.second.interest%></h5>
-          <% end%>
-        </div>
-
-        <div class="slide-text">
-          <% if @student.fields_of_interests.third == nil%>
-          <%= ""%>
-          <% else%>
-          <ul class="list">
-          <h5 class="text-uppercase"> <%=@student.fields_of_interests.third.interest%></h5>
-          <% end%>
-        </div>
-
-        <div class="slide-text">
-          <% if @student.fields_of_interests.fourth == nil%>
-          <%= ""%>
-          <% else%>
-          <ul class="list">
-          <h5 class="text-uppercase"> <%=@student.fields_of_interests.third.interest%></h5>
-          <% end%>
-        </div>
-
-
-      </div>
-            <div class="text-dark py-4">
-              <%= link_to "Add field of interest", new_student_fields_of_interest_path(@student), class: "text-blue "%>
-            </div>
-
-    </p>
-  </div>
+      </p>
   <div>
     <% @student.professional_experiences.each do |experience| %>
       <h4 class="text-uppercase"></h4>
@@ -163,7 +163,7 @@
       <h6 class="text-uppercase text-black-50"> <%=experience.company%> / <%=experience.started_at%> - <%=experience.finalized_at%></h6>
       <p><%=experience.description%></p>
     <% end%>
-</div>
+  </div>
 
     <div>
       <p>
@@ -175,9 +175,6 @@
     <div class="header-right">
         <h4 class="text-uppercase">portfolio</h4>
         <hr>
-
-      <strong>Portfolio:</strong>
-
         <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
             <ol class="carousel-indicators">
               <%@student.portfolio_types.each_with_index do |portfolio_type, index|%>
@@ -203,42 +200,83 @@
             <span class="sr-only">Next</span>
             </a>
         </div>
-
-            </div>
+      </div>
             <p>
             <%= link_to "Add portfolio type", new_student_portfolio_type_path(@student) %>
             </p>
 </div>
 <hr>
-    <div class="col-lg-8 bg-light text-dark py-4 px-5">
-
-      <strong>Certificates:</strong>
-        <ul>
-          <%@student.certificates.each do |certificate|%>
-          <p><%=certificate.upload_image%></p>
-          <p><%=certificate.image_title%></p>
-          <p><%=certificate.image_icon%></p>
-          <%end%>
-        </ul>
-            <p>
-            <%= link_to "Add Certificate", new_student_certificate_path(@student)%>
-            </p>
-
+<div class="col-lg-8 bg-light text-dark py-4 px-5">
+    <div class="header-right">
+        <h4 class="text-uppercase">certificates</h4>
         <hr>
-      <strong>Video:</strong>
-        <ul>
-          <%@student.videos.each do |video|%>
-          <li><%=video.url%></li>
-          <%end%>
-        </ul>
-            <p>
-            <%= link_to "Add Video", new_student_video_path(@student)%>
-            </p>
-            <hr>
 
-            
-      
-  </div>
+
+          <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
+            <ol class="carousel-indicators">
+              <%@student.certificates.each_with_index do |certificate, index|%>
+                <li data-target="#carouselExampleCaptions" data-slide-to="<%= index %>" class="<%= "active" if index == 0%>"></li>
+              <% end %>
+            </ol>
+              <div class="carousel-inner">
+                <%@student.certificates.each_with_index do |certificate, index|%>
+                    <div class="carousel-item <%= "active" if index == 0%>" >
+                      <%= image_tag "certificate#{index+1}.PNG", alt: "", class: "img-thumbnail mb-2" %>
+                      <div class="carousel-caption d-none d-md-block">
+                      </div>
+                      <h5><%=certificate.image_title%></h5>
+                    </div>
+                      <% end %>
+              </div>
+            <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+            </a>
+        </div>
+         </div>
+
+            <p>
+            <%= link_to "Add certificate type", new_student_certificate_path(@student) %>
+            </p>
+        <hr>
+<div>
+    <div class="header-right">
+        <h4 class="text-uppercase">videos</h4>
+        <hr>
+
+
+          <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
+            <ol class="carousel-indicators">
+              <%@student.videos.each_with_index do |video, index|%>
+                <li data-target="#carouselExampleCaptions" data-slide-to="<%= index %>" class="<%= "active" if index == 0%>"></li>
+              <% end %>
+              </ol>
+                  <div class="carousel-inner">
+                    <%@student.videos.each_with_index do |video, index|%>
+                        <div class="carousel-item <%= "active" if index == 0 %>" >
+                          <%= video_tag "video1.mp4", class:"embed-responsive embed-responsive-16by9" %>
+                        <div class="carousel-caption">
+                        </div>
+                         <h5><%=video.url%></h5>
+            </div>
+                      <% end %>
+                  </div>
+            <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+            </a>
     </div>
-    
+</div>
+
+            <p>
+            <%= link_to "Add video type", new_student_video_path(@student) %>
+            </p>
 </body>
