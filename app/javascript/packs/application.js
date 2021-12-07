@@ -30,7 +30,7 @@ document.addEventListener('turbolinks:load', () => {
 });
 
 
-  //test js
+  //slideshow home test js
 $("#slideshow > div:gt(0)").hide();
 
 setInterval(function () {
