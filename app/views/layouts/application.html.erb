@@ -15,8 +15,9 @@
   <body style="background-color: <%= @background_color || 'white' %>;">
     <%= render 'shared/navbar' %>
     <%= render 'shared/flashes' %>
-
-    <%=yield %>
+    <div class="pb-5 mb-5">
+      <%=yield %>
+    </div>
     <%= render "shared/footer" %>
   </body>
 </html>

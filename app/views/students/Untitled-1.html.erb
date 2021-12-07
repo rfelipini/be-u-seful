@@ -1,0 +1,137 @@
+  <h1>Student - show</h1>
+  
+<p>
+  <strong>Age:</strong>
+ 
+</p>
+<p>
+  <strong>Nationality:</strong>
+
+</p>
+<p>
+  <strong>City at:</strong>
+
+</p>
+<p>
+  <strong>City to:</strong>
+  
+</p>
+<p>
+  <strong>Phone number:</strong>
+  
+</p>
+<p>
+  <strong>Link to github:</strong>
+
+</p>
+<p>
+  <strong>Link to linkedin:</strong>
+ 
+</p>
+<p>
+  <strong>Passport:</strong>
+  
+</p>
+<p>
+  <strong>Remoto work:</strong>
+ 
+</p>
+<p>
+  <strong>Work abroad:</strong>
+
+</p>
+<p>
+
+
+
+
+  </ul>
+</p>
+<p>
+<p>
+
+</p>
+
+  <strong>Language:</strong>
+  <ul>
+    <%@student.languages.each do |language|%>
+      <li><%=language.language%></li>
+
+      <li><%=language.score%></li>
+      <%end%>
+  </ul>
+<p>
+<%= link_to "Add Languages", new_student_language_path(@student)%>
+</p>
+  <strong>Professional experience:</strong>
+  <ul>
+
+</p>
+<p>
+
+
+</p>
+  <strong>Courses:</strong>
+ 
+</p>
+  <strong>Student Skills:</strong>
+  <ul>
+
+</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="col-lg-8 bg-light text-dark py-4 px-5">
+    <div class="header-right">
+        <h4 class="text-uppercase">profile</h4>
+        <hr>
+            <div id="slideshow" >
+                <div class="slide-text">
+                <% if @student.fields_of_interests.first == nil%>
+                <%= ""%>
+                <% else%>
+                <ul class="list">
+                <h5 class="text-uppercase"> <%=@student.fields_of_interests.first.interest%></h5>
+                <% end%>
+                </div>
+            </div>
+    </div>
+</div>
+<hr>

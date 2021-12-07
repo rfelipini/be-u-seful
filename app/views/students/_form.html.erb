@@ -1,0 +1,39 @@
+
+<%= simple_form_for student do |f|%>
+ <div class="col-md-6 offset-md-3">
+    <%= f.input :full_name, :placeholder => 'Adam Smith' %>
+    </div>
+     <div class="col-md-6 offset-md-3">
+    <%= f.input :age, :collection => 14..90, :placeholder => '29' %>
+        </div>
+     <div class="col-md-6 offset-md-3">
+    <%= f.input :nationality, :placeholder => 'American'  %>
+        </div>
+     <div class="col-md-6 offset-md-3">
+    <%= f.input :city_at, :placeholder => 'New York'  %>
+        </div>
+     <div class="col-md-6 offset-md-3">
+    <%= f.input :city_to, :placeholder => 'Miami'  %>
+        </div>
+     <div class="col-md-6 offset-md-3">
+    <%= f.input :phone_number.to_s, :placeholder => '+55 11 932383996'  %>
+        </div>
+     <div class="col-md-6 offset-md-3">
+    <%= f.input :link_to_github, :placeholder => 'adamsmith'  %>
+        </div>
+     <div class="col-md-6 offset-md-3">
+    <%= f.input :link_to_linkedin, :placeholder => 'adamsmith'  %>
+        </div>
+     <div class="col-md-6 offset-md-3">
+    <%= f.input :passport, required: true, :collection => ['yes', 'no'], as: :radio_buttons  %>
+        </div>
+     <div class="col-md-6 offset-md-3">
+    <%= f.input :remoto_work, required: true, :collection => ['yes', 'no'], as: :radio_buttons  %>
+        </div>
+     <div class="col-md-6 offset-md-3">
+    <%= f.input :work_abroad, required: true, :collection => ['yes', 'no'], as: :radio_buttons  %>
+        </div>  
+     <div class="col-md-6 offset-md-3">
+    <%= f.submit 'create a student', class: 'btn btn-primary'%>
+        </div>
+<% end %>
