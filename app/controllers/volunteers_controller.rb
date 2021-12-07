@@ -13,7 +13,7 @@ class VolunteersController < ApplicationController
     #authorize @volunteer
     @volunteer.save
     if @volunteer.save
-      redirect_to @volunteer, notice: 'Volunteer was successfully created.'
+      redirect_to volunteer_page_path, notice: 'Volunteer was successfully created.'
     else
       render :new
     end
