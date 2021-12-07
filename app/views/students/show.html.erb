@@ -4,7 +4,9 @@
 <div class="row">
   <div class="col-lg-4 bg-dark text-white text-center py-2">
       <div class="header-left">
-          <%= cl_image_tag @student.photo.key, class: "img-thumbnail rounded-circle mb-2" %>
+      <% if @student.photo.attached? %>
+        <%= cl_image_tag @student.photo.key, class: "img-thumbnail rounded-circle mb-2" %>
+      <% end %>
           <h1 class="display-5"><%= @student.full_name%></h1>
            <ul class="list-unstyled text-white-50 ml-6 py-2 text-left">
               <li class="list item">
@@ -22,7 +24,7 @@
                 <li><i class="fas fa-sliders-h mx-4"></i> Fluency: <%=@student.languages.first.score%> %</li>
                           <% end%>
                         </div>
-                         
+
                          <div>
                           <% if @student.languages.second == nil%>
                           <%= ""%>
@@ -53,7 +55,7 @@
 <%= link_to "Add Languages", new_student_language_path(@student)%>
 </p>
               </li>
-            </ul>          
+            </ul>
       </div>
 
           <div>
@@ -101,9 +103,9 @@
                 <%= link_to "Add course", new_student_course_path(@student), class: "text-blue"%>
               </ul>
           </div>
-          
+
   </div>
-    
+
     <div class="col-lg-8 bg-light text-dark py-4 px-5">
       <div class="header-right">
       <h4 class="text-uppercase">profile</h4>
@@ -168,7 +170,7 @@
     <div>
       <p>
       <%= link_to "Add professional experience", new_student_professional_experience_path(@student), class: "text-blue "%>
-      </p> 
+      </p>
     </div>
 
 <div class="col-lg-8 bg-light text-dark py-4 px-5">
@@ -248,8 +250,9 @@
         <h4 class="text-uppercase">videos</h4>
         <hr>
 
-
+<% if @student.video.attached?  %>
 <%= cl_video_tag(@student.video.key, controls: true, :width => 600 ) %>
+<% end %>
 
 
 </body>
