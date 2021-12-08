@@ -1,3 +1,4 @@
+
 <body class="bg-light">
 
 <div class="container p-5">
@@ -17,18 +18,43 @@
                         </div>
                 <hr class="text-white-50">
                         <div>
-                            <% @student.languages.each do |language| %>
-                            <li><i class="fa fa-language mx-4"></i> Idiom: <%=language.language%></li>
-                            <li><i class="fas fa-sliders-h mx-4"></i> Fluency: <%=language.score%> %</li>
-                            <%=link_to language_path(language), method: :delete do   %>
-                            <li><i class="fas fa-minus-circle mx-4 text-warning" ></i></li>
-                            <% end%>
-                            <% end%>
-                       </div>
-<p>
+                          <% if @student.languages.first == nil%>
+                          <%= ""%>
+                          <% else%>
+                <li><i class="fa fa-language mx-4"></i> Idiom: <%=@student.languages.first.language%></li>
+                <li><i class="fas fa-sliders-h mx-4"></i> Fluency: <%=@student.languages.first.score%> %</li>
+                          <% end%>
+                        </div>
+
+                         <div>
+                          <% if @student.languages.second == nil%>
+                          <%= ""%>
+                          <% else%>
+                <li><i class="fa fa-language mx-4"></i> Idiom:  <%=@student.languages.second.language%></li>
+                <li><i class="fas fa-sliders-h mx-4"></i> Fluency: <%=@student.languages.second.score%> %</li>
+                          <% end%>
+                        </div>
+
+                          <div>
+                          <% if @student.languages.third == nil%>
+                          <%= ""%>
+                          <% else%>
+                <li><i class="fa fa-language mx-4"></i>  Idiom: <%=@student.languages.third.language%></li>
+                <li><i class="fas fa-sliders-h mx-4"></i> Fluency: <%=@student.languages.third.score%> %</li>
+                          <% end%>
+                        </div>
+
+                                                  <div>
+                          <% if @student.languages.fourth == nil%>
+                          <%= ""%>
+                          <% else%>
+                <li><i class="fa fa-language mx-4"></i>  Idiom: <%=@student.languages.fourth.language%></li>
+                <li><i class="fas fa-sliders-h mx-4"></i> Fluency: <%=@student.languages.fourth.score%> %</li>
+                          <% end%>
+                        </div>
+                        <p>
 <%= link_to "Add Languages", new_student_language_path(@student)%>
 </p>
-
               </li>
             </ul>
       </div>
@@ -58,11 +84,6 @@
                   <p > <i class="fas fa-book-open mx-4"></i>......... <%=student_skill.skill.skill_type%><br>
                       <i class="fas fa-sliders-h mx-4"></i> Score: <%=student_skill.score%> %</p>
                        <hr>
-                        <div>
-                            <%=link_to student_skill_path(student_skill), method: :delete do   %>
-                            <li><i class="fas fa-minus-circle mx-4 text-warning" ></i></li>
-                            <% end%>
-                       </div>
                 <%end%>
                 <div class="text-dark py-4">
                 <%= link_to "Add skill", new_student_student_skill_path(@student), class: "text-blue"%>
@@ -77,11 +98,6 @@
                 Course: <%=course.title%><br class="list-item">
                 Company: <%=course.company%><br class="list-item">
                 <p><i class="fas fa-book-open"></i>  <%=course.description%></p>
-                        <div>
-                            <%=link_to course_path(course), method: :delete do   %>
-                            <p><i class="fas fa-minus-circle text-warning" ></i></p>
-                            <% end%>
-                       </div>
                 <hr>
                 <%end%>
                 <div class="text-dark py-4">
@@ -132,14 +148,6 @@
 </div>
   </div>
 </div>
-
-                        <div>
-                            <%=link_to fields_of_interest_path, method: :delete do   %>
-                            <p><i class="fas fa-minus-circle text-warning" ></i></p>
-                            <% end%>
-                       </div>
-                <hr>
-
 
 
         </div>
@@ -247,9 +255,6 @@
         <% end %>
 
     <div>
-                <p>
-            <%= link_to "Add video type", new_student_video_path(@student) %>
-            </p>
 
 </body>
 

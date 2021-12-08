@@ -20,4 +20,8 @@ class PagesController < ApplicationController
   def volunteer_page
     @background_color = "#E5285E"
   end
+
+  def cv
+    @student = Student.find(params[:student_id])
+  end
 end

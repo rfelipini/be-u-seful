@@ -1,6 +1,4 @@
 Rails.application.routes.draw do
-  get 'certificates/new'
-  get 'student_skills/new'
   devise_for :users
   resources :volunteers, only: [:new, :create, :show, :destroy]
   resources :students, except: [:index, :destroy], shallow: true do
@@ -17,6 +15,7 @@ Rails.application.routes.draw do
   get "seja_util", to: 'pages#seja_util', as: "seja_util"
   get "student_page", to: 'pages#student_page', as: "student_page"
   get "volunteer_page", to: 'pages#volunteer_page', as: "volunteer_page"
+  get "cv/:student_id", to: 'pages#cv', as: "cv"
   root to: 'pages#home'
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
