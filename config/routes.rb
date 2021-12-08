@@ -1,8 +1,13 @@
 Rails.application.routes.draw do
-  get 'certificates/new'
-  get 'student_skills/new'
+  # get 'certificates/new'
+  # get 'student_skills/new'
   devise_for :users
   resources :volunteers, only: [:new, :create, :show]
+
+  resources :chatrooms, only: :show do
+    resources :messages, only: :create
+  end
+
   resources :students, only: [:new, :create, :show, :edit, :update] do
     resources :portfolio_types, only: [:new, :create]
     resources :fields_of_interests, only: [:new, :create]
