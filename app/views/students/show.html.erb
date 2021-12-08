@@ -97,55 +97,28 @@
       <hr>
 <br>
         <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
-  <div class="carousel-inner">
-    <div class="carousel-item active text-center ">
-            <% if @student.fields_of_interests.first == nil%>
-            <%= ""%>
-            <% else%>
-            <ul class="list">
-            <h5 class="text-uppercase"> <%=@student.fields_of_interests.first.interest%></h5>
-            <% end%>
-    </div>
-    <div class="carousel-item text-center">
-            <% if @student.fields_of_interests.second == nil%>
-            <%= ""%>
-            <% else%>
-            <ul class="list">
-            <h5 class="text-uppercase"> <%=@student.fields_of_interests.second.interest%></h5>
-            <% end%>
-    </div>
-    <div class="carousel-item text-center">
-            <% if @student.fields_of_interests.third == nil%>
-            <%= ""%>
-            <% else%>
-            <ul class="list">
-            <h5 class="text-uppercase"> <%=@student.fields_of_interests.third.interest%></h5>
-            <% end%>
-    </div>
-    <div class="carousel-item text-center">
-        <% if @student.fields_of_interests.fourth == nil%>
-        <%= ""%>
-        <% else%>
-        <ul class="list">
-        <h5 class="text-uppercase"> <%=@student.fields_of_interests.fourth.interest%></h5>
-        <% end%>
-</div>
-  </div>
-</div>
+          <div class="carousel-inner">
+            <% @student.fields_of_interests.each do |field|%>
+              <div class="carousel-item active text-center ">
+                <div class="slide-interest carousel-caption">
+                <h5 class="text-uppercase"> <%=field.interest%></h5>
 
-                        <div>
-                            <%=link_to fields_of_interest_path, method: :delete do   %>
-                            <p><i class="fas fa-minus-circle text-warning" ></i></p>
-                            <% end%>
-                       </div>
-                <hr>
+                <%=link_to fields_of_interest_path(field), method: :delete do   %>
+                  <p><i class="fas fa-minus-circle text-warning" ></i></p>
+                <% end%>
+              </div>
+            <% end%>
+          </div>
+        </div>
+
+        <hr>
 
 
 
         </div>
-              <div class="text-dark py-4">
-                <%= link_to "Add field of interest", new_student_fields_of_interest_path(@student), class: "text-blue "%>
-              </div>
+          <div class="text-dark py-4">
+          <%= link_to "Add field of interest", new_student_fields_of_interest_path(@student), class: "text-blue "%>
+          </div>
 
       </p>
   <div>

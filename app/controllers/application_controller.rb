@@ -7,6 +7,10 @@ class ApplicationController < ActionController::Base
     devise_parameter_sanitizer.permit(:sign_up, keys: [:role])
   end
 
+  def after_sign_in_path_for(resource)
+    current_user.role == "student" ? student_page_path : volunteer_page_path
+  end
+
   def dispatch_user
     return unless current_user && (current_user.volunteer.nil? || current_user.student.nil? ) && request.get?
 
