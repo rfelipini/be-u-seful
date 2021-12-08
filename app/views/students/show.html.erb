@@ -24,7 +24,7 @@
                 <li><i class="fas fa-sliders-h mx-4"></i> Fluency: <%=@student.languages.first.score%> %</li>
                           <% end%>
                         </div>
-
+                         
                          <div>
                           <% if @student.languages.second == nil%>
                           <%= ""%>
@@ -55,7 +55,7 @@
 <%= link_to "Add Languages", new_student_language_path(@student)%>
 </p>
               </li>
-            </ul>
+            </ul>          
       </div>
 
           <div>
@@ -103,51 +103,50 @@
                 <%= link_to "Add course", new_student_course_path(@student), class: "text-blue"%>
               </ul>
           </div>
-
+          
   </div>
-
-    <div class="col-lg-8 bg-light text-dark py-4 px-5">
+    
+    <div class="col-lg-8 bg-white text-dark py-4 px-5">
       <div class="header-right">
-      <h4 class="text-uppercase">profile</h4>
+    <h4 class="text-uppercase text-center">profile</h4>
       <hr>
-      <p>
-
-        <div id="slideshow" >
-          <div class="slide-text">
+<br>
+        <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active text-center ">
             <% if @student.fields_of_interests.first == nil%>
             <%= ""%>
             <% else%>
             <ul class="list">
             <h5 class="text-uppercase"> <%=@student.fields_of_interests.first.interest%></h5>
             <% end%>
-          </div>
-
-          <div class="slide-text">
+    </div>
+    <div class="carousel-item text-center">
             <% if @student.fields_of_interests.second == nil%>
             <%= ""%>
             <% else%>
             <ul class="list">
-            <h5> <%=@student.fields_of_interests.second.interest%></h5>
+            <h5 class="text-uppercase"> <%=@student.fields_of_interests.second.interest%></h5>
             <% end%>
-          </div>
-
-          <div class="slide-text">
+    </div>
+    <div class="carousel-item text-center">
             <% if @student.fields_of_interests.third == nil%>
             <%= ""%>
             <% else%>
             <ul class="list">
             <h5 class="text-uppercase"> <%=@student.fields_of_interests.third.interest%></h5>
             <% end%>
-          </div>
-
-          <div class="slide-text">
-            <% if @student.fields_of_interests.fourth == nil%>
-            <%= ""%>
-            <% else%>
-            <ul class="list">
-            <h5 class="text-uppercase"> <%=@student.fields_of_interests.third.interest%></h5>
-            <% end%>
-          </div>
+    </div>
+    <div class="carousel-item text-center">
+        <% if @student.fields_of_interests.fourth == nil%>
+        <%= ""%>
+        <% else%>
+        <ul class="list">
+        <h5 class="text-uppercase"> <%=@student.fields_of_interests.fourth.interest%></h5>
+        <% end%>
+</div>
+  </div>
+</div>
 
 
         </div>
@@ -170,12 +169,12 @@
     <div>
       <p>
       <%= link_to "Add professional experience", new_student_professional_experience_path(@student), class: "text-blue "%>
-      </p>
+      </p> 
     </div>
 
-<div class="col-lg-8 bg-light text-dark py-4 px-5">
+<div>
     <div class="header-right">
-        <h4 class="text-uppercase">portfolio</h4>
+        <h4 class="text-uppercase text-center">portfolio</h4>
         <hr>
         <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
             <ol class="carousel-indicators">
@@ -186,7 +185,7 @@
               <div class="carousel-inner">
               <%@student.portfolio_types.each_with_index do |portfolio_type, index|%>
                 <div class="carousel-item <%= "active" if index == 0%>" >
-                      <%= image_tag "template#{index+1}.PNG", alt: "", class: "img-thumbnail mb-2" %>
+                      <%= image_tag "template#{index+1}.PNG", alt: "", :width => 600%>
                   <div class="carousel-caption d-none d-md-block">
                   </div>
                   <h5><%=portfolio_type.title%></h5>
@@ -208,13 +207,13 @@
             </p>
 </div>
 <hr>
-<div class="col-lg-8 bg-light text-dark py-4 px-5">
+<div>
     <div class="header-right">
-        <h4 class="text-uppercase">certificates</h4>
+        <h4 class="text-uppercase text-center">certificates</h4>
         <hr>
 
 
-          <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
+          <div id="carouselExampleCaptions2" class="carousel slide" data-ride="carousel">
             <ol class="carousel-indicators">
               <%@student.certificates.each_with_index do |certificate, index|%>
                 <li data-target="#carouselExampleCaptions" data-slide-to="<%= index %>" class="<%= "active" if index == 0%>"></li>
@@ -223,18 +222,18 @@
               <div class="carousel-inner">
                 <%@student.certificates.each_with_index do |certificate, index|%>
                     <div class="carousel-item <%= "active" if index == 0%>" >
-                      <%= image_tag "certificate#{index+1}.PNG", alt: "", class: "img-thumbnail mb-2" %>
+                      <%= image_tag "certificate#{index+1}.PNG", alt: "", :width => 600 %>
                       <div class="carousel-caption d-none d-md-block">
                       </div>
                       <h5><%=certificate.image_title%></h5>
                     </div>
                       <% end %>
               </div>
-            <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
+            <a class="carousel-control-prev" href="#carouselExampleCaptions2" role="button" data-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
             <span class="sr-only">Previous</span>
             </a>
-            <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next">
+            <a class="carousel-control-next" href="#carouselExampleCaptions2" role="button" data-slide="next">
             <span class="carousel-control-next-icon" aria-hidden="true"></span>
             <span class="sr-only">Next</span>
             </a>
@@ -250,9 +249,10 @@
         <h4 class="text-uppercase">videos</h4>
         <hr>
 
-<% if @student.video.attached?  %>
-<%= cl_video_tag(@student.video.key, controls: true, :width => 600 ) %>
-<% end %>
+        <% if @student.video.attached?  %>
+        <%= cl_video_tag(@student.video.key, controls: true, :width => 600 ) %>
+        <% end %>
 
+    <div>
 
 </body>
