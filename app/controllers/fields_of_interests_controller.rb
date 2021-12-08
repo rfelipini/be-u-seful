@@ -17,6 +17,13 @@ class FieldsOfInterestsController < ApplicationController
     end
   end
 
+  def destroy
+    @fields_of_interest = FieldsOfInterest.find(params[:id])
+    @fields_of_interest.destroy
+    redirect_to @fields_of_interest.student, notice: 'Interest was successfully deleted.'
+  end
+  
+
   private
 
   def fields_of_interest_params
