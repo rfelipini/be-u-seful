@@ -25,6 +25,13 @@ class StudentSkillsController < ApplicationController
     end
   end
 
+  def destroy
+    @student_skill = StudentSkill.find(params[:id])
+    @student_skill.destroy
+    redirect_to @student_skill.student, notice: 'Skill was successfully deleted.'
+  end
+  
+
   private
 
   def student_skill_params

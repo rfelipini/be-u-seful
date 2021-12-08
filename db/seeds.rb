@@ -30,25 +30,25 @@ puts "done user"
 
 volunteer_01 = Volunteer.create!(
     full_name: 'José Tavares',
-    github: 'github.com/jtavares',
+    github: '/jtavares',
     background: 'Full stack developer',
     user: user_01
   )
 volunteer_02 = Volunteer.create!(
     full_name: 'Jamil da Silva',
-    github: 'github.com/jsilva',
+    github: '/jsilva',
     background: 'Cybersecurity Manager',
     user: user_02
   )
 volunteer_03 = Volunteer.create!(
   full_name: 'Jamila S. Braz',
-  github: 'github.com/jamilabraz',
+  github: '/jamilabraz',
   background: 'Front end developer',
   user: user_03
 )
 volunteer_04 = Volunteer.create!(
   full_name: 'Carlos J. Gomes brasil',
-  github: 'github.com/cbrasil',
+  github: '/cbrasil',
   background: 'Back end developer',
   user: user_04
 )
@@ -61,9 +61,9 @@ Student.create!(
     city_at: 'Rio de Janeiro',
     city_to: 'Chicago',
     phone_number: '55 21 99999 9999',
-    link_to_github: 'github.com/thaisguimreas',
-    link_to_linkedin: 'linkedin.com/thaisguimreas',
-    passport: '2BR22RJX2X2',
+    link_to_github: '/thaisguimreas',
+    link_to_linkedin: '/thaisguimreas',
+    passport: 'Sim',
     remoto_work: 'Sim',
     work_abroad: 'Sim',
     user: student
