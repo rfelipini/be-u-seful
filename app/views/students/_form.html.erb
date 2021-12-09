@@ -1,8 +1,12 @@
 
 <%= simple_form_for student do |f|%>
     <div class="col-md-6 offset-md-3">
+    <%= f.input :photo_portfolio, as: :file %>
+    </div>
+    <div class="col-md-6 offset-md-3">
     <%= f.input :photo_certificates, as: :file %>
-    </div><div class="col-md-6 offset-md-3">
+    </div>
+    <div class="col-md-6 offset-md-3">
     <%= f.input :video, as: :file %>
     </div>
     <div class="col-md-6 offset-md-3">
