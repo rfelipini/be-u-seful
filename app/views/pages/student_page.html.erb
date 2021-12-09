@@ -18,33 +18,26 @@
               View Volunteers
             </a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">
-              <span data-feather="#"></span>
-              Add Option
-            </a>
+
+          <li>
+            <%@volunteers.each do |volunteer| %>
+              <p><%= volunteer.full_name %></p>
+              <%= simple_form_for @chatroom do |f|%>
+                <%= f.hidden_field :volunteer_id, value: volunteer.id %>
+                <%= f.submit 'Chat'%>
+              <%end%>
+            <% end %>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">
-              <span data-feather="#"></span>
-              Add Option
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">
-              <span data-feather="#"></span>
-              Add Option
-            </a>
-          </li>
+
         </ul>
 
-        <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
+        <%# <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
           <span>Saved items</span>
           <a class="d-flex align-items-center text-muted" href="#" aria-label="Add a new report">
             <span data-feather="plus-circle"></span>
           </a>
-        </h6>
-        <ul class="nav flex-column mb-2">
+        </h6> %>
+        <%# <--<ul class="nav flex-column mb-2">
           <li class="nav-item">
             <a class="nav-link" href="#">
               <span data-feather="file-text"></span>
@@ -63,7 +56,7 @@
               Add text item
             </a>
           </li>
-        </ul>
+        </ul>--> %>
       </div>
     </nav>
 
