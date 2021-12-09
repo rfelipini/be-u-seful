@@ -137,7 +137,7 @@ ActiveRecord::Schema.define(version: 2021_12_03_181931) do
     t.string "nationality"
     t.string "city_at"
     t.string "city_to"
-    t.string "phone_number"
+    t.integer "phone_number"
     t.string "link_to_github"
     t.string "link_to_linkedin"
     t.string "passport"
