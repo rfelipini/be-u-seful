@@ -1,0 +1,19 @@
+<div class='container'>
+  <h1>bate papo entre: <%= @chatroom.student.full_name %> e <%= @chatroom.volunteer.full_name %> </h1>
+  <div id="messages" data-chatroom-id="<%= @chatroom.id %>">
+    <% @chatroom.messages.each do |message| %>
+      <div class="message-container" id="message-<%= message.id %>">
+        <i class="author">
+          <span><%= message.user.role == 'volunteer' ? @chatroom.volunteer.full_name : @chatroom.student.full_name%></span>
+          <small><%= message.created_at.strftime("%a %b %e at %l:%M%p") %></small>
+        </i>
+        <p><%= message.content %></p>
+      </div>
+    <% end %>
+  </div>
+
+    <%= simple_form_for [ @chatroom, @message ], remote: true do |f| %>
+      <%= f.input :content, label: false, placeholder: "Digite aqui sua mensagem..." %>
+    <% end %>
+
+</div>
