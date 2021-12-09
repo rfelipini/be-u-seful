@@ -16,9 +16,16 @@ class LanguagesController < ApplicationController
     end
   end
 
+  def destroy
+    @language = Language.find(params[:id])
+    @language.destroy
+    redirect_to @language.student, notice: 'Language was successfully deleted.'
+  end
+  
   private
 
   def language_params
     params.require(:language).permit(:language, :score)
   end
+
 end
