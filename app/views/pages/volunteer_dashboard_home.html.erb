@@ -1,0 +1,79 @@
+
+  <div class="container-fluid">
+    <div class="row">
+      <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
+        <div class="sidebar-sticky pt-3">
+          <ul class="nav flex-column">
+            <li class="nav-item">
+              <%=link_to "View Students", volunteer_page_path, class:"nav-link"%>
+            </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">
+              <span data-feather="#"></span>
+              Chat
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
+      <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+        <h1 class="h2">Welcome to your Be U(seful) Dashboard!</h1>
+        <div class="btn-toolbar mb-2 mb-md-0">
+          <div class="btn-group mr-2">
+            <button type="button" class="btn btn-sm btn-outline-secondary">Share CV</button>
+            <button type="button" class="btn btn-sm btn-outline-secondary">Download CV</button>
+          </div>
+        </div>
+      </div>
+
+<div class="container">
+  <div class="row mt-5">
+    <div class="col d-flex justify-content-center home2-intro">
+    Hey you, profissional de tecnologia bem-vinde tb!!!
+    Gostaria de compartilhar seu conhecimento e ser útil ajudando no crescimento profissional de jovens LGBTQIA+ por voluntariado?
+    </div>
+  </div>
+
+  <div class="row mt-5 d-flex justify-content-center">
+    <div class="col-12 col-lg-6 text-center">
+     <%= image_tag "logo1.png", size: "375x300"%>
+    </div>
+
+    <div class="col-11 col-lg-6">
+      <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+          <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+        </ol>
+
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+          <div class="slide-text carousel-caption">
+              <h1>Seja você!</h1>
+            </div>
+          </div>
+
+          <div class="carousel-item">
+            <div class="slide-text carousel-caption">
+              <p> Add Text </p>
+            </div>
+          </div>
+        </div>
+
+        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+    </main>
