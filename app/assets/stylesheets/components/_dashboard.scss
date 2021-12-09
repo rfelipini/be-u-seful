@@ -11,6 +11,9 @@ body {
 /*
  * Sidebar
  */
+#sidebarMenu{
+  min-height: calc(100vh - 57px - 50px);
+}
 
 .sidebar {
   position: fixed;
