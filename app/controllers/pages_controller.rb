@@ -21,7 +21,6 @@ class PagesController < ApplicationController
     else
       redirect_to root_path, notice: "You don't have access to this page"
     end
-
     @background_color = "#480ca8"
   end
 
@@ -34,14 +33,14 @@ class PagesController < ApplicationController
     end
   end
 
-  def student_dahsboard_home
+  def student_dashboard_home
+    @background_color = "#480ca8"
     if current_user.role == "student"
       @student = Student.find_by(user: current_user)
     else
       redirect_to root_path, notice: "You don't have access to this page"
     end
 
-    @background_color = "#480ca8"
   end
 
   def volunteer_dashboard_home

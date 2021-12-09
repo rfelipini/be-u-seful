@@ -1,4 +1,3 @@
-<body>
 
   <div class="container-fluid">
     <div class="row">
@@ -6,48 +5,12 @@
         <div class="sidebar-sticky pt-3">
           <ul class="nav flex-column">
             <li class="nav-item">
-              <a class="nav-link active" href="#">
-                <span data-feather="#"></span>
-                Volunteer Dashboard
-              <span class="sr-only">(current)</span>
-              </a>
+              <%=link_to "View Students", volunteer_page_path, class:"nav-link"%>
             </li>
           <li class="nav-item">
             <a class="nav-link" href="#">
               <span data-feather="#"></span>
-              View Students
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">
-              <span data-feather="#"></span>
               Chat
-            </a>
-          </li>
-
-        <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
-          <span>Saved items</span>
-          <a class="d-flex align-items-center text-muted" href="#" aria-label="Add a new report">
-            <span data-feather="plus-circle"></span>
-          </a>
-        </h6>
-        <ul class="nav flex-column mb-2">
-          <li class="nav-item">
-            <a class="nav-link" href="#">
-              <span data-feather="file-text"></span>
-              Add item
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">
-              <span data-feather="file-text"></span>
-              Add text item
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">
-              <span data-feather="file-text"></span>
-              Add text item
             </a>
           </li>
         </ul>
@@ -64,7 +27,53 @@
           </div>
         </div>
       </div>
-    </main>
+
+<div class="container">
+  <div class="row mt-5">
+    <div class="col d-flex justify-content-center home2-intro">
+    Hey you, profissional de tecnologia bem-vinde tb!!!
+    Gostaria de compartilhar seu conhecimento e ser útil ajudando no crescimento profissional de jovens LGBTQIA+ por voluntariado?
+    </div>
+  </div>
+
+  <div class="row mt-5 d-flex justify-content-center">
+    <div class="col-12 col-lg-6 text-center">
+     <%= image_tag "logo1.png", size: "375x300"%>
+    </div>
+
+    <div class="col-11 col-lg-6">
+      <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+          <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+        </ol>
+
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+          <div class="slide-text carousel-caption">
+              <h1>Seja você!</h1>
+            </div>
+          </div>
+
+          <div class="carousel-item">
+            <div class="slide-text carousel-caption">
+              <p> Add Text </p>
+            </div>
+          </div>
+        </div>
+
+        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+      </div>
+    </div>
+
   </div>
 </div>
-</body>
+
+    </main>
