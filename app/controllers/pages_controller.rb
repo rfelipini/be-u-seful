@@ -1,5 +1,5 @@
 class PagesController < ApplicationController
-  skip_before_action :authenticate_user!, only: [ :home, :seja_voce, :seja_util, :student_page, :volunteer_page ]
+  skip_before_action :authenticate_user!, only: [ :home, :seja_voce, :seja_util, :student_page, :volunteer_page, :cv ]
 
   def home
     @background_color = "#218380"
