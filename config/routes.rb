@@ -22,7 +22,9 @@ Rails.application.routes.draw do
   get "seja_voce", to: 'pages#seja_voce', as: "seja_voce"
   get "seja_util", to: 'pages#seja_util', as: "seja_util"
   get "student_page", to: 'pages#student_page', as: "student_page"
+  get "student_dashboard_home", to: 'pages#student_dashboard_home', as: "student_dashboard_home"
   get "volunteer_page", to: 'pages#volunteer_page', as: "volunteer_page"
+  get "volunteer_dashboard_home", to: 'pages#volunteer_dashboard_home', as: "volunteer_dashboard_home"
   get "cv/:student_id", to: 'pages#cv', as: "cv"
   root to: 'pages#home'
 
