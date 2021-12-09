@@ -14,6 +14,8 @@ class PagesController < ApplicationController
   end
 
   def student_page
+    @volunteers = Volunteer.all
+    @chatroom = Chatroom.new
     if current_user.role == "student"
         @student = Student.find_by(user: current_user)
     else
