@@ -96,13 +96,12 @@
     <h4 class="text-uppercase text-center">profile</h4>
       <hr>
 <br>
-        <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+        <div id="carouselExampleSlidesOnly-new" class="carousel slide" data-ride="carousel">
           <div class="carousel-inner">
             <% @student.fields_of_interests.each do |field|%>
-              <div class="carousel-item active text-center ">
+              <div class="carousel-item-new active text-center ">
                 <div class="slide-interest carousel-caption">
-                <h5 class="text-uppercase"> <%=field.interest%></h5>
-
+                <h5 class="text-uppercase text-dark"> <%=field.interest%></h5>
                 <%=link_to fields_of_interest_path(field), method: :delete do   %>
                   <p><i class="fas fa-minus-circle text-warning" ></i></p>
                 <% end%>
@@ -110,17 +109,12 @@
             <% end%>
           </div>
         </div>
-
-        <hr>
-
-
-
         </div>
           <div class="text-dark py-4">
           <%= link_to "Add field of interest", new_student_fields_of_interest_path(@student), class: "text-blue "%>
           </div>
+        <hr>
 
-      </p>
   <div>
     <% @student.professional_experiences.each do |experience| %>
       <h4 class="text-uppercase"></h4>
