@@ -14,22 +14,42 @@ class PagesController < ApplicationController
   end
 
   def student_page
+    @volunteers = Volunteer.all
+    @chatroom = Chatroom.new
     if current_user.role == "student"
-        @student = Student.find_by(user: current_user)
+      @student = Student.find_by(user: current_user)
     else
-        redirect_to root_path, notice: "You don't have access to this page"
+      redirect_to root_path, notice: "You don't have access to this page"
     end
-
     @background_color = "#480ca8"
   end
 
   def volunteer_page
-      @background_color = "#E5285E"
-      if current_user.role == "volunteer"
-        @volunteer = Volunteer.find_by(user: current_user)
-      else
-          redirect_to root_path, notice: "You don't have access to this page"
-      end
+    @background_color = "#E5285E"
+    if current_user.role == "volunteer"
+      @volunteer = Volunteer.find_by(user: current_user)
+    else
+      redirect_to root_path, notice: "You don't have access to this page"
+    end
+  end
+
+  def student_dashboard_home
+    @background_color = "#480ca8"
+    if current_user.role == "student"
+      @student = Student.find_by(user: current_user)
+    else
+      redirect_to root_path, notice: "You don't have access to this page"
+    end
+
+  end
+
+  def volunteer_dashboard_home
+    @background_color = "#E5285E"
+    if current_user.role == "volunteer"
+      @volunteer = Volunteer.find_by(user: current_user)
+    else
+      redirect_to root_path, notice: "You don't have access to this page"
+    end
   end
 
   def cv
