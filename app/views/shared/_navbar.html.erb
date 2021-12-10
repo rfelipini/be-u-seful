@@ -36,7 +36,8 @@
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
             <% if current_user.role == "student" && Student.find_by(user: current_user)%>
             <%= link_to "Edit CV", student_path(Student.find_by(user: current_user)), class: "dropdown-item" %>
-            <%= link_to "Dashboard", student_page_path, class: "dropdown-item" %>
+            <%= link_to "View Dashboard", student_dashboard_home_path, class: "dropdown-item" %>
+            <%= link_to "View Volunteers", student_page_path, class: "dropdown-item" %>
             <% end %>
             <%= link_to "Logout", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
           </div>

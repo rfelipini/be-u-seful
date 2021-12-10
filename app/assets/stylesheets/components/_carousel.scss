@@ -1,5 +1,5 @@
 .slide-interest {
-height: 50px;  
+height: 50px;
 }
 
 .carousel-item-new {
@@ -13,10 +13,17 @@ height: 50px;
 
 .img-cert-carousel {
     width: 600px;
-    height: 600px !important; 
+    height: 600px !important;
 }
 
 
 .portfolio-carousel {
-    height: 700px !important; 
+    height: 700px !important;
+}
+
+.carousel-title{
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
