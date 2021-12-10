@@ -137,8 +137,9 @@
     <div class="header-right">
         <h4 class="text-uppercase text-center">portfolio</h4>
         <hr>
-        
-        <%= cl_image_tag @student.photo_portfolio.key,  class: "img-cert-carousel" %>    
+        <% if  @student.photo_portfolio.attached?  %>
+          <%= cl_image_tag @student.photo_portfolio.key,  class: "img-cert-carousel" %> 
+        <% end %>   
 
             <p>
             <%= link_to "Add portfolio type",  edit_student_path(@student)%>
@@ -148,9 +149,9 @@
     <div class="header-right">
         <h4 class="text-uppercase text-center">certificates</h4>
         <hr>
- 
-                   <%= cl_image_tag @student.photo_certificates.key,  class: "img-cert-carousel" %>                 
-                                           
+                    <% if  @student.photo_certificates.attached?  %>
+                      <%= cl_image_tag @student.photo_certificates.key,  class: "img-cert-carousel" %>                 
+                    <% end %>                                          
                     <p>
             <%= link_to "Add certificate type",  edit_student_path(@student) %>
             </p>
