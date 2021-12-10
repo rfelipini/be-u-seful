@@ -137,46 +137,23 @@
     <div class="header-right">
         <h4 class="text-uppercase text-center">portfolio</h4>
         <hr>
-        <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
-            <ol class="carousel-indicators">
-              <%@student.portfolio_types.each_with_index do |portfolio_type, index|%>
-                <li data-target="#carouselExampleCaptions" data-slide-to="<%= index %>" class="<%= "active" if index == 0%>"></li>
-              <% end %>
-            </ol>
-              <div class="carousel-inner">
-              <%@student.portfolio_types.each_with_index do |portfolio_type, index|%>
-                <div class="carousel-item <%= "active" if index == 0%> portfolio-carousel" >
-                      <%= image_tag "template#{index+1}.PNG", alt: "", class: "img-carousel" %>
-                  <div class="carousel-caption d-none d-md-block">
-                  </div>
-                  <h5><%=portfolio_type.title%></h5>
-                </div>
-                <% end %>
-              </div>
-            <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="sr-only">Previous</span>
-            </a>
-            <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="sr-only">Next</span>
-            </a>
-        </div>
-      </div>
+        
+        <%= cl_image_tag @student.photo_portfolio.key,  class: "img-cert-carousel" %>    
+
             <p>
-            <%= link_to "Add portfolio type", new_student_portfolio_type_path(@student) %>
+            <%= link_to "Add portfolio type",  edit_student_path(@student)%>
             </p>
 </div>
         <hr>
     <div class="header-right">
         <h4 class="text-uppercase text-center">certificates</h4>
         <hr>
-                    <p>
-            <%= link_to "Add certificate type",  edit_student_path(@student) %>
-            </p>
  
                    <%= cl_image_tag @student.photo_certificates.key,  class: "img-cert-carousel" %>                 
                                            
+                    <p>
+            <%= link_to "Add certificate type",  edit_student_path(@student) %>
+            </p>
         <hr>
 
 

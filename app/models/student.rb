@@ -10,6 +10,7 @@ class Student < ApplicationRecord
   has_many :skills, through: :student_skills
   has_many :certificates
   has_one_attached :photo
+  has_one_attached :photo_portfolio
   has_one_attached :photo_certificates
   has_one_attached :video
   validates :full_name, :age, presence: true
