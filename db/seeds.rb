@@ -5,7 +5,7 @@ Volunteer.destroy_all
 User.destroy_all
 
 puts "begin seeds"
-student = User.create!(email: 'thais@beuseful.com',
+student = User.create!(email: 'guilherme.santos@gmail.com',
   password: '123123',
   role: 'student'
 )
@@ -55,14 +55,14 @@ volunteer_04 = Volunteer.create!(
 puts "done volunteer"
 
 Student.create!(
-    full_name: "Thais Guimaraes",
+    full_name: "Guilherme Santos",
     age:'21',
     nationality: 'Brasileira',
     city_at: 'Rio de Janeiro',
     city_to: 'Chicago',
     phone_number: '55 21 99999 9999',
-    link_to_github: '/thaisguimreas',
-    link_to_linkedin: '/thaisguimreas',
+    link_to_github: '/guilhermesantos',
+    link_to_linkedin: '/guilhermesantos',
     passport: 'Sim',
     remoto_work: 'Sim',
     work_abroad: 'Sim',
@@ -107,7 +107,7 @@ professional_experience = ProfessionalExperience.create!(
   student_id: Student.first.id,
   description:'Atendimento ao cliente com vendas de perfumaria',
   started_at:'10.2019',
-  ocupation: 'Vendedora',
+  ocupation: 'Vendedor',
   company: "Natura"
 )
 
